@@ -1,0 +1,755 @@
+<!-- /index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Amy’s House & Pet Sitting | Trusted, Caring Sitters</title>
+    <meta
+      name="description"
+      content="Amy’s House & Pet Sitting offers caring, reliable pet and home sitting. Book drop-ins, overnights, walks, and more."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Amy’s House & Pet Sitting" />
+    <meta
+      property="og:description"
+      content="Trusted house and pet sitting with loving care and dependable updates."
+    />
+    <meta property="og:type" content="website" />
+
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #101823;
+        --text: #e8edf2;
+        --muted: #a9b4bf;
+        --brand: #7dd3fc;
+        --brand-2: #a7f3d0;
+        --border: rgba(255, 255, 255, 0.10);
+        --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --maxw: 1080px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        background:
+          radial-gradient(1200px 700px at 15% -10%, rgba(125, 211, 252, 0.18), transparent 60%),
+          radial-gradient(900px 500px at 90% 10%, rgba(167, 243, 208, 0.14), transparent 60%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 8px;
+        background: #fff;
+        color: #000;
+        padding: 10px 12px;
+        border-radius: 10px;
+        z-index: 9999;
+      }
+      .skip-link:focus { left: 8px; }
+
+      .container { max-width: var(--maxw); margin: 0 auto; padding: 0 18px; }
+      .pill {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+        background: rgba(11, 15, 20, 0.65);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        min-width: 220px;
+      }
+      .logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.9), rgba(167, 243, 208, 0.9));
+        box-shadow: var(--shadow);
+      }
+      .brand-name {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+      }
+      .brand-name strong { font-size: 15px; letter-spacing: 0.2px; }
+      .brand-name span { font-size: 12px; color: var(--muted); }
+
+      nav ul {
+        display: flex;
+        gap: 18px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+      }
+
+      .nav a {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .nav a:hover { color: var(--text); text-decoration: none; }
+
+      .btn {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        padding: 10px 14px;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: transform 0.12s ease;
+        text-decoration: none !important;
+      }
+      .btn:active { transform: translateY(1px); }
+      .btn-primary {
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.9), rgba(167, 243, 208, 0.85));
+        color: #021018;
+        border-color: transparent;
+      }
+      .btn-ghost { background: transparent; }
+
+      .menu-btn {
+        display: none;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        border-radius: 12px;
+        padding: 10px 12px;
+        cursor: pointer;
+      }
+
+      .mobile-nav {
+        display: none;
+        padding: 0 18px 16px 18px;
+      }
+      .mobile-nav a {
+        display: block;
+        padding: 12px 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        margin-top: 10px;
+        color: var(--muted);
+      }
+      .mobile-nav a:hover { color: var(--text); text-decoration: none; }
+
+      main { padding: 34px 0 70px; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .card {
+        background: rgba(16, 24, 35, 0.72);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-left { padding: 26px; }
+      .hero-left h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.1;
+        letter-spacing: -0.4px;
+      }
+      .hero-left p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 54ch;
+      }
+
+      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+      .trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+      .hero-right {
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .mini {
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .mini strong { display: block; margin-bottom: 6px; }
+      .mini span { color: var(--muted); font-size: 14px; }
+
+      section { margin-top: 22px; }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .section-head h2 { margin: 0; font-size: 22px; }
+      .section-head p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .service {
+        padding: 18px;
+      }
+      .service h3 { margin: 0 0 8px; font-size: 16px; }
+      .service p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .content { padding: 20px; }
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .list li { margin: 8px 0; }
+
+      .quote {
+        padding: 18px;
+      }
+      .quote p { margin: 0 0 10px; color: var(--text); }
+      .quote span { color: var(--muted); font-size: 14px; }
+
+      .faq details {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .faq details + details { margin-top: 10px; }
+      .faq summary { cursor: pointer; font-weight: 700; }
+      .faq p { margin: 10px 0 0; color: var(--muted); }
+
+      form {
+        display: grid;
+        gap: 10px;
+      }
+      label { font-size: 13px; color: var(--muted); }
+      input, textarea, select {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.2);
+        color: var(--text);
+        outline: none;
+      }
+      input:focus, textarea:focus, select:focus { border-color: rgba(125, 211, 252, 0.6); }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 24px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .muted { color: var(--muted); }
+      .small { font-size: 13px; }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid-3 { grid-template-columns: 1fr; }
+        .two-col { grid-template-columns: 1fr; }
+        nav ul { display: none; }
+        .menu-btn { display: inline-flex; }
+        .mobile-nav[aria-hidden="false"] { display: block; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-name">
+            <strong id="siteName">Amy’s House & Pet Sitting</strong>
+            <span id="siteTagline">Reliable care • Happy pets • Peace of mind</span>
+          </div>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a class="btn btn-primary" id="navCta" href="#contact">Check Availability</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
+          Menu
+        </button>
+      </div>
+
+      <div class="mobile-nav container" id="mobileNav" aria-hidden="true">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary" style="margin-top: 12px; justify-content: center;">Check Availability</a>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero" id="top">
+        <div class="card hero-left">
+          <span class="pill" id="serviceAreaPill">Serving: Your City + nearby</span>
+          <h1>Kind, dependable house & pet sitting—so you can travel stress-free.</h1>
+          <p>
+            We treat your home like our own and your pets like family. Expect clear communication,
+            photo updates, and consistent routines.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" id="primaryCta" href="#contact">Request a Booking</a>
+            <a class="btn btn-ghost" id="phoneLink" href="tel:+10000000000">Call/Text</a>
+            <a class="btn" id="emailLink" href="mailto:hello@example.com">Email</a>
+          </div>
+
+          <div class="trust-row">
+            <span class="pill">✅ Daily updates</span>
+            <span class="pill">✅ Meet & greet</span>
+            <span class="pill">✅ Meds & special needs</span>
+            <span class="pill">✅ Home checks</span>
+          </div>
+        </div>
+
+        <aside class="card hero-right" aria-label="Quick info">
+          <div class="mini">
+            <strong>Typical services</strong>
+            <span>Drop-ins • Walks • Overnights • Vacation sitting</span>
+          </div>
+          <div class="mini">
+            <strong>Availability</strong>
+            <span id="availabilityText">Weekdays & weekends • Holidays by request</span>
+          </div>
+          <div class="mini">
+            <strong>Fast response</strong>
+            <span>Usually within 2–6 hours</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="services">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Flexible options for busy schedules and travel.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card service">
+            <h3>Pet Sitting (Drop-ins)</h3>
+            <p>Feeding, fresh water, potty breaks, playtime, litter cleanup, and photo updates.</p>
+          </div>
+          <div class="card service">
+            <h3>Overnight Sitting</h3>
+            <p>Stay-in care for anxious pets or longer trips, with morning + evening routines.</p>
+          </div>
+          <div class="card service">
+            <h3>House Sitting</h3>
+            <p>Mail pickup, lights/blinds rotation, plant watering, and security-minded checks.</p>
+          </div>
+          <div class="card service">
+            <h3>Dog Walks</h3>
+            <p>Enrichment-focused walks tailored to age, energy, and weather conditions.</p>
+          </div>
+          <div class="card service">
+            <h3>Medication Support</h3>
+            <p>Pills, topical, and basic care instructions followed carefully.</p>
+          </div>
+          <div class="card service">
+            <h3>Custom Requests</h3>
+            <p>Multi-pet homes, senior pets, or special routines—just ask.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="two-col">
+        <div class="card content">
+          <div class="section-head">
+            <h2>About Amy</h2>
+            <p>Care you can trust.</p>
+          </div>
+          <p class="muted">
+            Hi! I’m Amy. I’ve been caring for pets and homes with a calm, reliable approach—
+            consistent routines, safety-first habits, and lots of affection.
+          </p>
+          <ul class="list">
+            <li>Meet & greet before first booking</li>
+            <li>Photo updates and clear communication</li>
+            <li>Comfortable with dogs, cats, and small pets</li>
+          </ul>
+          <p class="small muted" id="credentialsNote">
+            Add credentials here: insured/bonded, CPR/first aid, years of experience, etc.
+          </p>
+        </div>
+
+        <div class="card content">
+          <div class="section-head">
+            <h2>Service Area & Hours</h2>
+            <p>Keep it local and clear.</p>
+          </div>
+          <ul class="list" id="serviceAreaList">
+            <li>Service area: Your City + 10–15 miles</li>
+            <li>Hours: 7am–8pm (flexible)</li>
+            <li>Holidays: limited spots</li>
+          </ul>
+          <p class="muted small">
+            Tip: add neighborhoods you cover (e.g., Downtown, West Side, etc.).
+          </p>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="section-head">
+          <h2>What clients say</h2>
+          <p>Swap these with real reviews when you have them.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card quote">
+            <p>“Amy treated our dog like family and sent the best updates. Total peace of mind.”</p>
+            <span>— Jamie R.</span>
+          </div>
+          <div class="card quote">
+            <p>“Super reliable and thoughtful. Our cats warmed up immediately.”</p>
+            <span>— Priya S.</span>
+          </div>
+          <div class="card quote">
+            <p>“Our home was spotless and our pets were happy. We’ll book again.”</p>
+            <span>— Alex T.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="two-col">
+        <div class="card content">
+          <div class="section-head">
+            <h2>Pricing</h2>
+            <p>Optional but helpful.</p>
+          </div>
+          <ul class="list">
+            <li>Drop-in visit (30 min): starting at $XX</li>
+            <li>Dog walk (30 min): starting at $XX</li>
+            <li>Overnight: starting at $XX</li>
+          </ul>
+          <p class="muted small">
+            Replace “$XX” with your real rates or remove this section entirely.
+          </p>
+        </div>
+        <div class="card content">
+          <div class="section-head">
+            <h2>How it works</h2>
+            <p>Simple steps.</p>
+          </div>
+          <ol class="list">
+            <li>Send a request with dates + pet details</li>
+            <li>Meet & greet</li>
+            <li>We confirm + you relax</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="faq" class="card content faq">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Answer the common questions.</p>
+        </div>
+
+        <details>
+          <summary>Do you offer a meet & greet?</summary>
+          <p>Yes—before the first booking, we’ll meet you and your pets to confirm routines and expectations.</p>
+        </details>
+        <details>
+          <summary>Do you send updates?</summary>
+          <p>Absolutely. Expect messages and photos after visits and at agreed times for overnights.</p>
+        </details>
+        <details>
+          <summary>What areas do you serve?</summary>
+          <p id="faqArea">Your City and nearby neighborhoods. Contact us and we’ll confirm if you’re in range.</p>
+        </details>
+      </section>
+
+      <section id="contact" class="two-col">
+        <div class="card content">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <p>Fast, friendly scheduling.</p>
+          </div>
+
+          <!-- Replace the action with your own Formspree endpoint: https://formspree.io/ -->
+          <form id="contactForm" action="https://formspree.io/f/yourFormId" method="POST" novalidate>
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" inputmode="tel" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Select one</option>
+                  <option>Drop-in Visit</option>
+                  <option>Dog Walk</option>
+                  <option>Overnight Sitting</option>
+                  <option>House Sitting</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="startDate">Start date</label>
+                <input id="startDate" name="startDate" type="date" />
+              </div>
+              <div>
+                <label for="endDate">End date</label>
+                <input id="endDate" name="endDate" type="date" />
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Pet details + any notes</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Request</button>
+            <p class="muted small" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="card content">
+          <div class="section-head">
+            <h2>Direct booking</h2>
+            <p>Prefer to text/call?</p>
+          </div>
+          <p class="muted">
+            Phone: <a id="phoneText" href="tel:+10000000000">+1 (000) 000-0000</a><br />
+            Email: <a id="emailText" href="mailto:hello@example.com">hello@example.com</a>
+          </p>
+
+          <div class="mini">
+            <strong>What to include</strong>
+            <span>
+              Dates • Address (approx) • Pet types • Meds • Visit times • Any special routines
+            </span>
+          </div>
+
+          <p class="muted small" style="margin-top: 12px;">
+            Add your preferred payment methods, cancellation policy, and emergency contact process here.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+          <span id="footerName">© <span id="year"></span> Amy’s House & Pet Sitting</span>
+          <span class="muted">Built with simple, fast HTML.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /**
+       * Single place to customize basic info.
+       */
+      const SITE = {
+        name: "Amy’s House & Pet Sitting",
+        tagline: "Reliable care • Happy pets • Peace of mind",
+        city: "Your City",
+        areaNote: "Your City + 10–15 miles",
+        phoneDisplay: "+1 (000) 000-0000",
+        phoneTel: "+10000000000",
+        email: "hello@example.com",
+        availability: "Weekdays & weekends • Holidays by request",
+      };
+
+      const $ = (sel) => document.querySelector(sel);
+
+      function applySiteConfig() {
+        $("#siteName").textContent = SITE.name;
+        $("#footerName").innerHTML = `© <span id="year"></span> ${SITE.name}`;
+        $("#siteTagline").textContent = SITE.tagline;
+
+        $("#serviceAreaPill").textContent = `Serving: ${SITE.areaNote}`;
+        $("#availabilityText").textContent = SITE.availability;
+
+        const phoneHref = `tel:${SITE.phoneTel}`;
+        $("#phoneLink").setAttribute("href", phoneHref);
+        $("#phoneText").setAttribute("href", phoneHref);
+        $("#phoneText").textContent = SITE.phoneDisplay;
+
+        const emailHref = `mailto:${SITE.email}`;
+        $("#emailLink").setAttribute("href", emailHref);
+        $("#emailText").setAttribute("href", emailHref);
+        $("#emailText").textContent = SITE.email;
+
+        $("#faqArea").textContent = `${SITE.areaNote}. Contact us and we’ll confirm if you’re in range.`;
+
+        const serviceAreaList = $("#serviceAreaList");
+        serviceAreaList.innerHTML = `
+          <li>Service area: ${SITE.areaNote}</li>
+          <li>Hours: 7am–8pm (flexible)</li>
+          <li>Holidays: limited spots</li>
+        `;
+
+        $("#year").textContent = String(new Date().getFullYear());
+      }
+
+      function setupMobileMenu() {
+        const btn = $("#menuBtn");
+        const nav = $("#mobileNav");
+
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          nav.setAttribute("aria-hidden", String(expanded));
+        });
+
+        nav.addEventListener("click", (e) => {
+          const a = e.target.closest("a");
+          if (!a) return;
+          btn.setAttribute("aria-expanded", "false");
+          nav.setAttribute("aria-hidden", "true");
+        });
+      }
+
+      function validateForm(form) {
+        const requiredIds = ["name", "phone", "email", "service", "message"];
+        for (const id of requiredIds) {
+          const el = form.querySelector(`#${id}`);
+          if (!el || !String(el.value || "").trim()) {
+            el?.focus?.();
+            return { ok: false, message: "Please fill out all required fields." };
+          }
+        }
+        const email = form.querySelector("#email").value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          form.querySelector("#email").focus();
+          return { ok: false, message: "Please enter a valid email." };
+        }
+        return { ok: true, message: "" };
+      }
+
+      function setupContactForm() {
+        const form = $("#contactForm");
+        const status = $("#formStatus");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          status.textContent = "";
+
+          const v = validateForm(form);
+          if (!v.ok) {
+            status.textContent = v.message;
+            return;
+          }
+
+          try {
+            const res = await fetch(form.action, {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: new FormData(form),
+            });
+
+            if (res.ok) {
+              form.reset();
+              status.textContent = "Thanks! Your request was sent. We’ll get back to you shortly.";
+              return;
+            }
+
+            status.textContent = "Hmm—couldn’t send. Please try again or contact us directly.";
+          } catch {
+            status.textContent = "Network issue. Please call/text or try again later.";
+          }
+        });
+      }
+
+      applySiteConfig();
+      setupMobileMenu();
+      setupContactForm();
+    </script>
+  </body>
+</html>
